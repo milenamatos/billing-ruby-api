@@ -14,4 +14,6 @@ class Registration < ApplicationRecord
   validates :course_name, presence: true
   validates :institution, presence: true
   validates :student, presence: true
+
+  has_many :bill
 end

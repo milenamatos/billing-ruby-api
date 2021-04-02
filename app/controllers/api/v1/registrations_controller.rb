@@ -1,7 +1,8 @@
 module Api
 	module V1
     class RegistrationsController < ApplicationController  
-      
+			include Helper
+			
       # GET /api/v1/registrations
       # Listar todas as matrículas
 			def index
@@ -46,18 +47,18 @@ module Api
 				else
 					render json: { status: 'Erro', message: 'Ocorreu um erro ao salvar a matrícula.', data: registration.errors },status: :unprocessable_entity
 				end
-			end
-			
+			end			
 
 			def set_registration(item)
 				return {
 					id: item.id,
 					valor_total: item.total_price,
-					qtd_faturas: item.bill_quantity,
+					quantidade_faturas: item.bill_quantity,
 					dia_vencimento: item.due_date,
 					nome_curso: item.course_name,
-					instituicao_id: item.institution_id,
-					aluno_id: item.student_id,
+					instituicao: set_institution(item.institution),
+					aluno: set_student(item.student),
+					lista_faturas: item.bill.map { |bill| set_bill(bill) },
 					dt_criacao: item.created_at.strftime("%F %T")
 				}
 			end
