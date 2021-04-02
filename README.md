@@ -1,24 +1,109 @@
-# README
+# Billing API com Ruby On Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Dependências de sistema
+  - Ruby (>= 2.7.0)
+  - Rails
+  - PostgreSQL
 
-Things you may want to cover:
 
-* Ruby version
+## Banco de dados
+Execute o script abaixo para criar o banco.
+``` 
+CREATE DATABASE billing;
+```
 
-* System dependencies
+## Rodando o projeto
+1. Clone o repositório.
+2. Execute os seguintes comandos: 
+ - Instalação de dependências: `bundle install`
+ - Migração do banco: `rails db:migrate`
+3. Para subir a API localmente rode o comando: `rails s`
 
-* Configuration
+Pronto! A API estará rodando em: http://localhost:3000
 
-* Database creation
+## Endpoints
 
-* Database initialization
+Todos os endpoints estão sob o domínio /api/v1/. Segue abaixo a lista e descrição das rotas.
 
-* How to run the test suite
+Exemplo: `http://localhost:3000/api/v1/institutions`
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Instituições
 
-* Deployment instructions
+- Listar todas as instituições
 
-* ...
+  `GET institutions`
+
+- Listar por ID da instituição
+
+  `GET institutions\id`
+
+- Criar uma nova instituição
+
+  `POST institutions`
+
+  Objeto JSON esperado: 
+```
+  {
+      "name": "UNIFESP",
+      "document": "87107579000174",
+      "institution_type": "Universidade"
+  }
+```
+
+2. Alunos
+- Listar todos alunos
+
+  `GET students`
+
+- Listar por ID do aluno
+
+  `GET students\id`
+
+- Criar um novo aluno
+
+  `POST students`
+
+  Objeto JSON esperado: 
+```
+  {
+      "name": "Milena",
+      "document": "54636199057",
+      "gender": "F",
+      "payment": "Boleto",
+      "birth_date": "26/08/1999"
+  }
+```
+
+3. Matrículas
+- Listar todas as matrículas
+
+  `GET registrations`
+
+- Listar por ID da matrícula
+
+  `GET registrations\id`
+
+- Criar uma nova matrícula e suas respectivas faturas
+
+  `POST registrations`
+
+  Objeto JSON esperado (a instituição e aluno devem ser previamente cadastrados):
+```
+  {
+      "total_price": 100.00,
+      "bill_quantity": 2,
+      "due_date": 10,
+      "course_name": "Computação",
+      "student_id": 1,
+      "institution_id": 1
+  }
+```
+
+4. Faturas
+- Listar todas as faturas
+
+  `GET bills`
+
+- Listar por ID da matrícula
+
+  `GET bills\id`
