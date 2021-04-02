@@ -1,7 +1,8 @@
 module Api
 	module V1
     class BillsController < ApplicationController  
-      
+			include Helper
+			
       # GET /api/v1/bills
       # Listar todas as faturas
 			def index
@@ -22,18 +23,8 @@ module Api
         }
         
 				render json: {status: 'Sucesso', message: 'Retornadas as faturas filtradas por matrícula.', data: result }, status: :ok
-      end
-
-			def set_bill(item)
-				return {
-					id: item.id,
-					valor: item.price,
-					data_vencimento: item.due_date,
-          status: Bill.statuses[item.status],
-					matricula_id: item.registration_id,
-					dt_criacao: item.created_at.strftime("%F %T")
-				}
 			end
+			
 		end
 	end
 end

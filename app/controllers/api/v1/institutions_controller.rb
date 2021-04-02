@@ -1,7 +1,8 @@
 module Api
 	module V1
     class InstitutionsController < ApplicationController  
-      
+			include Helper
+			
       # GET /api/v1/institutions
       # Listar todas as instituićoes
 			def index
@@ -36,15 +37,6 @@ module Api
 				params.require(:institution).permit(:name, :institution_type, :document)
 			end
 
-			def set_institution(item)
-				return {
-					id: item.id,
-					nome: item.name,
-					CNPJ: item.document,
-					tipo: Institution.institution_types[item.institution_type],
-					dt_criacao: item.created_at.strftime("%F %T")
-				}
-			end
 		end
 	end
 end

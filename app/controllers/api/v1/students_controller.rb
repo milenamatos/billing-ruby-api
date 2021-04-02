@@ -1,7 +1,8 @@
 module Api
 	module V1
     class StudentsController < ApplicationController  
-      
+			include Helper
+			
       # GET /api/v1/students
       # Listar todos alunos
 			def index
@@ -36,18 +37,6 @@ module Api
 				params.require(:student).permit(:name, :document, :birth_date, :telephone, :gender, :payment)
 			end
 
-			def set_student(item)
-				return {
-					id: item.id,
-					nome: item.name,
-					CPF: item.document,
-					data_nascimento: item.birth_date,
-					telefone: item.telephone,
-          genero: Student.genders[item.gender],
-          pagamento: Student.payments[item.payment],
-					dt_criacao: item.created_at.strftime("%F %T")
-				}
-			end
 		end
 	end
 end
