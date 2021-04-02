@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_002922) do
+ActiveRecord::Schema.define(version: 2021_04_02_013208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,10 +45,8 @@ ActiveRecord::Schema.define(version: 2021_04_02_002922) do
     t.index ["institution_id"], name: "index_registrations_on_institution_id"
     t.index ["student_id"], name: "index_registrations_on_student_id"
   end
-
-# Could not dump table "students" because of following StandardError
-#   Unknown type 'gender_type' for column 'gender'
-
+  
+  add_foreign_key "bills", "registrations"
   add_foreign_key "institutions", "institution_types"
   add_foreign_key "registrations", "institutions"
   add_foreign_key "registrations", "students"
