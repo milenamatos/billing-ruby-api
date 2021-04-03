@@ -3,11 +3,10 @@
 one:
   price: 1.5
   due_date: 2021-04-01
-  status: MyString
+  status: Paga
   registration: one
 
 two:
   price: 1.5
   due_date: 2021-04-01
-  status: MyString
   registration: two

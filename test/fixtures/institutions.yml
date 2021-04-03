@@ -3,9 +3,9 @@
 one:
   name: MyString
   document: MyText
-  institution_type: one
+  institution_type: Universidade
 
 two:
-  name: MyString
-  document: MyText
-  institution_type: two
+  name: MyString2
+  document: MyText2
+  institution_type: Escola

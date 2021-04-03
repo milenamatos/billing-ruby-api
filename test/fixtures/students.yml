@@ -5,13 +5,13 @@ one:
   document: MyString
   birth_date: 2021-04-01
   telephone: 1
-  gender: MyString
-  payment: MyString
+  gender: M
+  payment: Boleto
 
 two:
-  name: MyString
-  document: MyString
+  name: MyString2
+  document: MyString2
   birth_date: 2021-04-01
   telephone: 1
-  gender: MyString
-  payment: MyString
+  gender: F
+  payment: Cartão
