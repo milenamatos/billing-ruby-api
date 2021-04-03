@@ -2,7 +2,7 @@
 
 one:
   name: MyString
-  document: MyString
+  document: 24390503006
   birth_date: 2021-04-01
   telephone: 1
   gender: M
@@ -10,7 +10,7 @@ one:
 
 two:
   name: MyString2
-  document: MyString2
+  document: 67510415004
   birth_date: 2021-04-01
   telephone: 1
   gender: F
