@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  document: MyText
+  name: Teste
+  document: 71864297000181
   institution_type: Universidade
 
 two:
-  name: MyString2
-  document: MyText2
+  name: Teste2
+  document: 38609167000127
   institution_type: Escola
