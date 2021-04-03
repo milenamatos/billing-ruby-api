@@ -2,7 +2,7 @@
 
 one:
   price: 1.5
-  due_date: 2021-04-01
+  due_date: 2021-08-01
   status: Paga
   registration: one
 
