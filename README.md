@@ -6,17 +6,11 @@
   - PostgreSQL
 
 
-## Banco de dados
-Execute o script abaixo para criar o banco.
-``` 
-CREATE DATABASE billing;
-```
-
 ## Rodando o projeto
 1. Clone o repositório.
 2. Execute os seguintes comandos: 
  - Instalação de dependências: `bundle install`
- - Migração do banco: `rails db:migrate`
+ - Criação e migração do banco: `rails db:create db:migrate`
 3. Para subir a API localmente rode o comando: `rails s`
 
 Pronto! A API estará rodando em: http://localhost:3000
@@ -107,3 +101,13 @@ Exemplo: `http://localhost:3000/api/v1/institutions`
 - Listar por ID da matrícula
 
   `GET bills\id`
+
+## Execução de testes unitários
+
+  - Para executar todos os testes: `rails test`
+  - Para escolher o diretório a ser testado:
+    `rails test test/models` ou `rails test test/controllers`
+  - Para testar apenas um arquivo basta especificar no comando, exemplo:
+    ```
+    rails test test/models/institution_test.rb
+    ```
