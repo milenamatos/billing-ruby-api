@@ -24,6 +24,8 @@ Este projeto tem como objetivo simular uma API de gerenciamento das mensalidades
    Neste passo já serão carregado alguns registros para teste no banco local.
 3. Para subir a API localmente rode o comando: `rails s`
 
+PS: Se estiver rodando em uma máquina Linux, rode os comandos acima com Sudo.
+
 Pronto! A API estará rodando em: http://localhost:3000
 
 ## Endpoints
