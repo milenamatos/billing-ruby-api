@@ -20,7 +20,8 @@ Este projeto tem como objetivo simular uma API de gerenciamento das mensalidades
 1. Clone o repositório.
 2. Execute os seguintes comandos: 
  - Instalação de dependências: `bundle install`
- - Criação e migração do banco: `rails db:create db:migrate`
+ - Criação e migração do banco: `rails db:create db:setup`
+   Neste passo já serão carregado alguns registros para teste no banco local.
 3. Para subir a API localmente rode o comando: `rails s`
 
 Pronto! A API estará rodando em: http://localhost:3000
