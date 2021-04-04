@@ -26,7 +26,7 @@ module Api
 			def create
 				institution = Institution.new(institution_params)
 				if institution.save
-					render json: { status: 'Sucesso', message: 'Salvo com sucesso.', data: institution }, status: :created
+					render json: { status: 'Sucesso', message: 'Salvo com sucesso.', data: set_institution(institution) }, status: :created
 				else
 					render json: { status: 'Erro', message: 'Ocorreu um erro ao salvar.', data: institution.errors },status: :unprocessable_entity
 				end

@@ -26,7 +26,7 @@ module Api
 			def create
 				student = Student.new(student_params)
 				if student.save
-					render json: { status: 'Sucesso', message: 'Salvo com sucesso.', data: student }, status: :created
+					render json: { status: 'Sucesso', message: 'Salvo com sucesso.', data: set_student(student) }, status: :created
 				else
 					render json: { status: 'Erro', message: 'Ocorreu um erro ao salvar.', data: student.errors },status: :unprocessable_entity
 				end
