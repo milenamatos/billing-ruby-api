@@ -1,10 +1,20 @@
 # Billing API com Ruby On Rails
 
+## Resumo
+
+Este projeto tem como objetivo simular uma API de gerenciamento das mensalidades pagas pelos alunos à instituição de ensino que ele estuda.
+
+## Funcionalidades
+
+- Listagem e criação de Instituição de Ensino;
+- Listagem e criação de Alunos;
+- Listagem e criação de Matrículas;
+- Listagem de Faturas
+
 ## Dependências de sistema
   - Ruby (>= 2.7.0)
   - Rails
   - PostgreSQL
-
 
 ## Rodando o projeto
 1. Clone o repositório.
@@ -104,10 +114,8 @@ Exemplo: `http://localhost:3000/api/v1/institutions`
 
 ## Execução de testes unitários
 
-  - Para executar todos os testes: `rails test`
-  - Para escolher o diretório a ser testado:
+- Para executar todos os testes: `rails test`
+- Para escolher o diretório a ser testado:
     `rails test test/models` ou `rails test test/controllers`
-  - Para testar apenas um arquivo basta especificar no comando, exemplo:
-    ```
-    rails test test/models/institution_test.rb
-    ```
+- Para testar apenas um arquivo basta especificar no comando, exemplo:
+    ``` rails test test/models/institution_test.rb ```
