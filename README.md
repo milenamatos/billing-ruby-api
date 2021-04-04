@@ -1,20 +1,18 @@
 # Billing API com Ruby On Rails
 
+## Resumo
+
+Este projeto tem como objetivo simular uma API de gerenciamento das mensalidades pagas pelos alunos à instituição de ensino que ele estuda.
+
+## Funcionalidades
+
+- Listagem e criação de Instituição de Ensino;
+- Listagem e criação de Alunos;
+- Listagem e criação de Matrículas;
+- Listagem de Faturas
+
 ## Dependências de sistema
-  - Ruby (>= 2.7.0)
-  - Rails
-  - PostgreSQL
-
-  OU
-
-  - Docker 
-
-
-## Banco de dados
-Execute o comando abaixo para criar o banco.
-``` 
-rails db:create
-```
+  - Docker
 
 ## Rodando o projeto
 
@@ -23,17 +21,10 @@ Com Docker:
 1. Clone o repositório.
 2. Execute os seguintes comandos: 
  - Build das imagens: `docker-compose build`
- - Criação e migração do banco: `docker-compose run web rake db:create db:migrate`
+ - Criação e migração do banco: `docker-compose run web rake db:create db:setup`
 3. Para subir a API: `docker-compose up`
 
-Sem Docker:
-
-1. Clone o repositório.
-2. Execute os seguintes comandos: 
- - Instalação de dependências: `bundle install`
- - Criação e migração do banco: `rails db:create db:migrate`
-3. No arquivo "database.yml" altere o host para: `localhost`
-3. Para subir a API localmente rode o comando: `rails s`
+PS: Se estiver rodando em uma máquina Linux, rode os comandos acima com Sudo.
 
 Pronto! A API estará rodando em: http://localhost:3000
 
@@ -123,3 +114,11 @@ Exemplo: `http://localhost:3000/api/v1/institutions`
 - Listar por ID da matrícula
 
   `GET bills\id`
+
+## Execução de testes unitários
+
+- Para executar todos os testes: `rails test`
+- Para escolher o diretório a ser testado:
+    `rails test test/models` ou `rails test test/controllers`
+- Para testar apenas um arquivo basta especificar no comando, exemplo:
+    ``` rails test test/models/institution_test.rb ```

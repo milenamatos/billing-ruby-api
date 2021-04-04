@@ -2,7 +2,7 @@ require "test_helper"
 
 class InstitutionTest < ActiveSupport::TestCase
   def setup
-    @institution = Institution.new(name: 'Teste', institution_type: :university)
+    @institution = institutions(:one)
   end
 
   test "the truth" do
