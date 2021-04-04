@@ -5,18 +5,34 @@
   - Rails
   - PostgreSQL
 
+  OU
+
+  - Docker 
+
 
 ## Banco de dados
-Execute o script abaixo para criar o banco.
+Execute o comando abaixo para criar o banco.
 ``` 
-CREATE DATABASE billing;
+rails db:create
 ```
 
 ## Rodando o projeto
+
+Com Docker:
+
+1. Clone o repositório.
+2. Execute os seguintes comandos: 
+ - Build das imagens: `docker-compose build`
+ - Criação e migração do banco: `docker-compose run web rake db:create db:migrate`
+3. Para subir a API: `docker-compose up`
+
+Sem Docker:
+
 1. Clone o repositório.
 2. Execute os seguintes comandos: 
  - Instalação de dependências: `bundle install`
- - Migração do banco: `rails db:migrate`
+ - Criação e migração do banco: `rails db:create db:migrate`
+3. No arquivo "database.yml" altere o host para: `localhost`
 3. Para subir a API localmente rode o comando: `rails s`
 
 Pronto! A API estará rodando em: http://localhost:3000
