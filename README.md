@@ -119,6 +119,8 @@ Exemplo: `http://localhost:3000/api/v1/institutions`
 
 - Para executar todos os testes: `rails test`
 - Para escolher o diretório a ser testado:
+    
     `rails test test/models` ou `rails test test/controllers`
 - Para testar apenas um arquivo basta especificar no comando, exemplo:
-    ``` rails test test/models/institution_test.rb ```
+    
+    `rails test test/models/institution_test.rb`
