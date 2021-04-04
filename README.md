@@ -117,8 +117,10 @@ Exemplo: `http://localhost:3000/api/v1/institutions`
 
 ## Execução de testes unitários
 
-- Para executar todos os testes: `rails test`
+- Para executar todos os testes: `docker-compose run web rails test`
 - Para escolher o diretório a ser testado:
-    `rails test test/models` ou `rails test test/controllers`
+    `docker-compose run web rails test test/models` 
+    ou 
+    `docker-compose run web rails test test/controllers`
 - Para testar apenas um arquivo basta especificar no comando, exemplo:
-    ``` rails test test/models/institution_test.rb ```
+    ```docker-compose run web rails test test/models/institution_test.rb ```
