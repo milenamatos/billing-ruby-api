@@ -74,4 +74,37 @@ class RegistrationTest < ActiveSupport::TestCase
   test "should save with correct values" do
     assert @registration.save and @registration.valid?
   end
+
+  test "should save correct number of bills" do
+    new_registration = Registration.create({total_price: 1, institution_id: 1, student_id: 1, course_name: 'teste', due_date: 15, bill_quantity: 4 })
+    new_registration.create_bills
+    assert new_registration and new_registration.valid?
+    assert_equal new_registration.bill_quantity, new_registration.bill.length
+  end
+
+  test "should save correct total price" do
+    new_registration = Registration.create({total_price: 100, institution_id: 1, student_id: 1, course_name: 'teste', due_date: 15, bill_quantity: 4 })
+    new_registration.create_bills
+    assert new_registration and new_registration.valid?
+    sum_price = 0
+    new_registration.bill.each do | item | 
+      sum_price += item.price
+    end 
+    assert_equal new_registration.total_price, sum_price
+  end
+
+  test "should save registration with due date = 31" do
+    new_registration = Registration.create({total_price: 1, institution_id: 1, student_id: 1, course_name: 'teste', due_date: 31, bill_quantity: 4 })
+    new_registration.create_bills
+    assert new_registration and new_registration.valid?
+  end
+
+  test "should save bills with correct due dates" do
+    new_registration = Registration.create({total_price: 2400, institution_id: 1, student_id: 1, course_name: 'teste', due_date: 31, bill_quantity: 12 })
+    new_registration.create_bills
+    assert new_registration and new_registration.valid?
+    new_registration.bill.each do | item | 
+      pp(item.due_date)
+    end
+  end
 end

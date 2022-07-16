@@ -2,7 +2,7 @@
 
 one:
   total_price: 1
-  bill_quantity: 1
+  bill_quantity: 4
   due_date: 1
   course_name: MyString
   institution: one
